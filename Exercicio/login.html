@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- Criar um cadastro que tenha:
+
+- CPF
+-> Obrigatório
+-> Aceitar somente digitação de números
+-> Máscara: xxx.xxx.xxx-xx
+-> Tamanho máximo: 14
+
+- Nome completo
+-> Obrigatório
+-> Tamanho máximo: 40
+
+- Data de Nascimento
+-> Obrigatório
+-> Aceitar somente digitação de números
+-> Máscara: xx/xx/xxxx
+-> Tamanho máximo: 10
+
+- CPF do Responsável
+-> O campo deve estar visível se a data de nascimento do titular for depois do ano 2000 (inclusive)
+-> Obrigatório se nasceu depois do ano 2000 (inclusive)
+-> Aceitar somente digitação de números
+-> Máscara: xxx.xxx.xxx-xx
+-> Tamanho máximo: 14
+
+- Login de acesso
+-> Obrigatório
+-> Tamanho máximo: 8
+
+- Confirmação do login
+-> Obrigatório
+-> Deve ser igual ao login
+-> Tamanho máximo: 8
+
+- CEP de residência
+-> Obrigatório
+-> Aceitar somente digitação de números
+-> Máscara: xxxxx-xxx
+-> Tamanho máximo: 9
+
+- Endereço
+-> Obrigatório
+-> Tamanho máximo: 60
+
+- UF
+-> Combo
+-> Obrigatório
+
+- Observações
+-> Opcional
+
+- Aceite do termo (sim ou não)
+-> Obrigatório informar Sim
+-> Inicialmente vem informado como não
+
+- Botão para salvar -->
+
+<html>
+
+	<head>
+		<title> Cadastro Simples </title>
+	</head>
+	
+	<body>
+		
+		<h3> Cadastro de Cliente</h3>
+		<form id="formCliente" action="groselha.html" method="GET">
+		
+			<label for="nome">Nome:</label>
+			<input type="text" id="nome" name="nome" value="" maxlength="40"/>
+			
+			<p/>
+			
+			<label for="dtNascimento">Data de nascimento:</label>
+			<input type="text" id="dtNascimento" name="dtNascimento" value="" maxlength="10"/>
+			
+			<p/>
+			
+			<label for="cpf">CPF:</label>
+			<input type="text" id="cpf" name="cpf" value="" maxlength="14"/>
+			
+			<p/>
+			
+			<label for="cpfResponsavel">CPF Responsável:</label>
+			<input type="text" id="cpfResponsavel" name="cpfResponsavel" value="" maxlength="14"/>
+			
+			<p/>
+			
+			<label for="login">Login:</label>
+			<input type="text" id="login" name="login" value="" maxlength="14"/>
+			
+			<p/>
+			
+			<label for="loginConf">Confirmar Login:</label>
+			<input type="text" id="loginConf" name="loginConf" value="" maxlength="14"/>
+			
+			<p/>
+			
+			<label for="cep">CEP:</label>
+			<input type="text" id="cep" name="cep" value="" maxlength="9"/>
+			
+			<p/>
+			
+			<label for="endereco">Endereço:</label>
+			<input type="text" id="endereco" name="endereco" value="" maxlength="60"/>
+			
+			<p/>
+			
+			<label for="uf">UF:</label>
+			<select id="uf" name="uf">
+				<option value="">Selecione...</option>
+			</select>
+			
+			<p/>
+			
+			<label class="observacao">Observações:</label>
+			<br/>
+			<textarea id="observacao" name="observacao" cols="20" rows="5"> </textarea>
+			
+			<p/>
+			
+			<label for="termo">Aceite do Termo:</label>
+			<br />
+			<input type="radio" id="sim" name="termo"/>Sim
+			<input type="radio" id="nao" name="termo"/>Não
+			
+			<p/>
+			
+			<input type="submit" value="Salvar" id="btnSalvar"/>
+		</form>
+	</body>
+	
+</html>

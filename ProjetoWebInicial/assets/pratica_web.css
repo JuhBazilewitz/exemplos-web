@@ -1,0 +1,20 @@
+body{
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode';
+	font-size:12pt;
+}
+input[type="text"], textarea{
+	background-color:#dcd2df;
+	padding: 5px;
+}
+		
+.rotulo{
+	font-size: 9pt;
+	display: inline-block;
+	width: 200px;
+	margin-bottom: 5px;
+	text-align: right;
+}
+#btnSalvar{
+	margin-left: 200px;
+	font-size:22pt;
+}

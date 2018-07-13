@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head> 
+		<title> Prática com jQuery </title>
+		<script src="assets/jquery-3.3.1.js"></script>
+		
+		<script>
+			
+			$(document).ready(function(){
+				//alert('Rumo ao Hexa....');
+			//	$('#cpf').change(function(){
+			//		alert('mudou o cpf.');
+			//	});
+				
+				$(':text').each(function(indice){
+					//alert('achei um text: ' + indice);
+					
+					// retorna o valor atual
+					var conteudo = $(this).val();
+					
+					// atribui um novo valor/conteúdo
+					$(this).val('teste');
+				});
+				
+				$('#cpf').focus(function(){
+					$(this).css('color', 'red');
+				}).blur(function(){
+					$(this).css('color', '#000000');
+				}).change(function(){
+					if($(this).val() == ''){
+						$('#btnSalvar').fadeOut(); // hidden
+					} else{
+						$('#btnSalvar').fadeIn(); // show
+					}
+				});
+			});
+			
+			//alert('Só em 2022...');
+		</script>
+	</head>
+	
+	<body> 
+	
+		<form id="frmCadastro" method="GET" action="">
+		
+			<label>CPF.:</label>
+			<input = type="text" id="cpf" name="cpf" />
+			
+			</br>
+			
+			<label>Nome:</label>
+			<input = type="text" id="nome" name="nome" />
+			
+			</br>
+			
+			<input type="button" value="Salvar" id="btnSalvar"/>
+		</form>
+	</body>
+</html>

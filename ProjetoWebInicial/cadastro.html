@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Cadastro Simples </title>
+		<link href="assets/pratica_web.css" type="text/css" rel="stylesheet" />
+	</head>
+
+	<script>
+		function carregarPagina(){
+			alert('Ola...tudo bem?');
+			alert('Serio??');
+		}
+		
+		window.onload = function(){
+			//carregarPagina();
+			var codigo = document.getElementById('codigo');
+			codigo.focus();
+			codigo.onchange = function(){
+				if(codigo.value.length == 0){
+					alert('Informe o código.');
+				}
+			}
+			
+			codigo.addEventListener('keypress', function(e){
+				var tecla = e.keyCode;
+				if(tecla < 48 || tecla > 57){
+					e.returnValue = false;
+					return false;
+				}
+				return true;
+			});
+			
+			codigo.addEventListener('keydown', function(){
+				var conteudo = this.value;
+				
+				if(conteudo.length == 2){
+					conteudo += '.';
+				}
+				
+				if(conteudo.length == 6){
+					conteudo += '/';
+				}
+				
+				this.value = conteudo;
+				
+			});
+			
+			/*setTimeout(function(){
+				alert('timeout adicionado');
+			}, 3000);
+			
+			setInterval(function(){
+				alert('intervalo adicionado');
+			}, 5000);*/
+			
+		}
+	</script>
+	
+	<body>
+		
+		<h3> Cadastro de Cliente</h3>
+		<form id="formCliente" action="groselha.html" method="GET">
+		
+			<label class="rotulo">Código:</label> <input type="text" id="codigo" name="codigo" value="" maxlength="8"/>
+			
+			<br/>
+			
+			<label class="rotulo">Nome:</label> <input type="text" id="nome" name="nome" value="" maxlength="40"/>
+			
+			<br/>
+			
+			<label class="rotulo">Endereço:</label>
+			<textarea id="endereco" name="endereco" cols="20" rows="5"> </textarea>
+			
+			<br/>
+			
+			<label class="rotulo">Gênero:</label>
+			<input type="radio" id="masculino" name="genero"/>Masculino
+			<input type="radio" id="feminino" name="genero"/>Feminino
+			
+			<br/>
+			
+			<label class="rotulo">Status:</label>
+			<input type="radio" id="ativo" name="status"/>Ativo
+			<input type="radio" id="inativo" name="status"/>Inativo
+			
+			<br/>
+			
+			<label class="rotulo">Estado Civil:</label>
+			<select id="estado-civil" name="estado-civil">
+				<option value="">Selecione...</option>
+				<option value="C">Casado</option>
+				<option value="S">Solteiro</option>
+			</select>
+			
+			<br/>
+			
+			<label class="rotulo">Produtos de Interesse:</label>
+			<input type="checkbox" id="prod-financiamento" name="produto" value="1"/>Financiamento
+			<input type="checkbox" id="prod-cheque-especial" name="produto" value="2"/>Cheque Especial
+			<input type="checkbox" id="prod-cartao-credito" name="produto" value="3"/>Cartão de Crédito
+			
+			<br/>
+			
+			<input type="submit" value="Salvar" id="btnSalvar"/>
+		
+		</form>
+		
+	</body>
+
+</html>
